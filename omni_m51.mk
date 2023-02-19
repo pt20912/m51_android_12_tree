@@ -1,21 +1,12 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-
-# Add this line if your device is 64-bit
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-# Otherwise, If you have 32-bit device, add the below line instead of above line
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Another common config inclusion
-$(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
-
-# If you are building from OmniROM's minimal source, Inherit some common Omni stuff.
+# Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Replace m51 with your Device Name's Value.
-# Replace samsung with your Brand's / Manufacturer's Value.
-PRODUCT_COPY_FILES += device/samsung/m51/prebuilt/zImage:kernel
-# Fles under $(LOCAL_PATH)/recovery/root/ gets automatically copied into recovery
-# PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/root/*:root/*
+# Inherit from m20lte device
+$(call inherit-product, device/samsung/m51/device.mk)
 
 PRODUCT_DEVICE := m51
 PRODUCT_NAME := omni_m51
