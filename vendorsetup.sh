@@ -59,8 +59,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	
 	# R11.1 Settings
 	export FOX_VERSION="R11.1_1"
-	export OF_MAINTAINER="Sushrut1101"
-	export FOX_BUILD_TYPE="Stable"
+	export OF_MAINTAINER="ArixCute"
+	export FOX_BUILD_TYPE="Beta"
 
 	# Quick Backup Defaults
 	export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
